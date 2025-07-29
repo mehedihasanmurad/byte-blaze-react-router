@@ -19,7 +19,7 @@ const Navbar = () => {
             setTheme("light");
         }
     }
-    console.log(theme)
+   
     return (
         <div className="navbar bg-base-100 px-8 shadow-lg fixed z-10">
             <div className="flex-1">
