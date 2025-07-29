@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IoMdMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const [theme, setTheme] = useState("light");
@@ -12,7 +13,7 @@ const Navbar = () => {
     },[theme])
     const handleChangeTheme = (e) => {
         if (e.target.checked) {
-            setTheme("synthwave");
+            setTheme("dark");
         }
         else {
             setTheme("light");
@@ -20,16 +21,16 @@ const Navbar = () => {
     }
     console.log(theme)
     return (
-        <div className="navbar bg-base-100 px-6 shadow-sm fixed z-10">
+        <div className="navbar bg-base-100 px-8 shadow-lg fixed z-10">
             <div className="flex-1">
                 <a className="btn btn-ghost font-bold gap-0 text-secondary text-2xl">Byte<span className='text-primary'>Blaze</span></a>
             </div>
-            <div className="flex items-center">
-                <div className={`absolute md:static ${open ? "top-12" : "-top-28"} duration-1000`}>
-                    <ul className="menu menu-horizontal px-1">
-                        <li className='font-bold'><a>Home</a></li>
-                        <li className='font-bold text-primary'><a>Blogs</a></li>
-                        <li className='font-bold'><a>Bookmarks</a></li>
+            <div className="flex items-center gap-6">
+                <div className={`absolute md:static ${open ? "top-14" : "-top-32"} duration-1000`}>
+                    <ul className="menu menu-horizontal px-1 flex flex-col md:flex-row gap-6">
+                        <NavLink to="/" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}>Home</NavLink>
+                        <NavLink to="/blogs" className={({ isActive }) => isActive ? "text-primary font-bold" : "font-bold"}>Blogs</NavLink>
+                        <NavLink to="/bookmarks" className={({ isActive }) => isActive ? "text-primary font-bold" : "font-bold"}>Bookmarks</NavLink>
                     </ul>
                 </div>
                 <div className='md:hidden mr-6' onClick={()=> setOpen(!open)}>

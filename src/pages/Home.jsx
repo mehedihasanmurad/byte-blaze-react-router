@@ -1,12 +1,14 @@
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
+import Banner from '../components/Banner/Banner';
+import wave from '../assets/wave.svg'
 
 const Home = () => {
     return (
-        <div>
-            {/* navbar */}
-            <Navbar></Navbar>
-            <h2>This is home page</h2>
+        <div className='flex relative flex-col justify-center items-center min-h-[calc(100vh-117px)]'>
+            {/* banner part */}
+            <Banner></Banner>
+
+            <img className='w-full absolute bottom-0' src={wave} alt="" />
         </div>
     );
 };
