@@ -23,7 +23,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 px-8 shadow-lg fixed z-10">
             <div className="flex-1">
-                <a className="btn btn-ghost font-bold gap-0 text-secondary text-2xl">Byte<span className='text-primary'>Blaze</span></a>
+                <Link to="/" className="btn btn-ghost font-bold gap-0 text-secondary text-2xl">Byte<span className='text-primary'>Blaze</span></Link>
             </div>
             <div className="flex items-center gap-6">
                 <div className={`absolute md:static ${open ? "top-14" : "-top-32"} duration-1000`}>
