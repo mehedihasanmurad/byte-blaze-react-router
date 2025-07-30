@@ -7,7 +7,7 @@ const BlogCard = ({ blog, deletable, handleDelete }) => {
    
     return (
         <div className='flex relative'>
-            <Link className="max-w-sm transition delay-150 duration-300 ease-in-out  hover:scale-105 hover:border-secondary border-opacity-30 mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50 border-2 border-primary">
+            <Link to={`/blog/${id}`} rel="noopener noreferrer" className="max-w-sm transition delay-150 duration-300 ease-in-out  hover:scale-105 hover:border-secondary border-opacity-30 mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50 border-2 border-primary">
                 <img role="presentation" className="object-cover w-full rounded-2xl h-52 dark:bg-gray-500 p-3" src={social_image} />
                 <div className="p-3 space-y-2">
                     <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
